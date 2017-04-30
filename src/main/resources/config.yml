@@ -1,0 +1,32 @@
+message:
+  success: '§2购买{name}成功! 你现在还有{money}个点券.'
+  not-money: '§c点券不足! 你当前有{money}个点券,但是购买该物品还需要{need}个点券.'
+  not-pay: '§c你还没有充值过服务器,无法进行消费!'
+  exception: '§c支付失败,未知异常. (如果多次出现请让服主联系MCRMB管理员).'
+
+#配置节点解释:
+#display为显示名字,也就是message节点中的success中的{name},同时也会提交到mcrmb服务器方便服主查询
+#permission为权限,如果不需要权限请填none
+#price为价格
+#command为购买后执行命令 格式为: <执行类型>:<执行内容>  {player}将会被替换为玩家名字
+#command执行类型列表:
+#console: 控制台执行
+#player: 玩家执行
+#bypass: 玩家以OP权限执行
+#message: 向玩家发送消息
+
+items:
+  def1:
+    display: 1个石头
+    permission: none
+    price: 10
+    command:
+      - console:give {player} 1 1
+      - message:§a购买成功
+  def2:
+    display: 10个石头
+    permission: none
+    price: 98
+    command:
+      - console:give {player} 1 10
+      - message:§a购买成功
