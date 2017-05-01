@@ -1,8 +1,6 @@
-package com.mcrmb.sponge.auxiliary.mcrmb;
+package com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb;
 
 import com.google.inject.Inject;
-import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-import ninja.leaping.configurate.loader.ConfigurationLoader;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.config.ConfigDir;

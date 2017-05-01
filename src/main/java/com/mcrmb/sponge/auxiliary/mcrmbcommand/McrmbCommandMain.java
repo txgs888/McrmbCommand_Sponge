@@ -1,16 +1,17 @@
-package com.mcrmb.sponge.auxiliary;
+package com.mcrmb.sponge.auxiliary.mcrmbcommand;
 
-import com.mcrmb.sponge.auxiliary.mcrmb.ConfigManager;
-import com.mcrmb.sponge.auxiliary.mcrmb.JavaPlugin;
-import com.mcrmb.sponge.auxiliary.mcrmb.McrmbPluginInfo;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.ConfigManager;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.JavaPlugin;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.McrmbPluginInfo;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
+import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 
 /**
  * Created by txgs888 on 2017/4/30.
  */
-@Plugin(id = McrmbPluginInfo.ID, name = McrmbPluginInfo.NAME, version = McrmbPluginInfo.VERSION, authors = {McrmbPluginInfo.AUTHORS})
+@Plugin(id = McrmbPluginInfo.ID, name = McrmbPluginInfo.NAME, version = McrmbPluginInfo.VERSION, authors = {McrmbPluginInfo.AUTHORS}, dependencies = {@Dependency(id = "mcrmb")})
 public class McrmbCommandMain extends JavaPlugin {
     private static McrmbCommandMain instance;
 
@@ -28,5 +29,6 @@ public class McrmbCommandMain extends JavaPlugin {
         instance = this;
         super.onServerStart(event);
         ConfigManager.init();
+        info("加载成功!");
     }
 }

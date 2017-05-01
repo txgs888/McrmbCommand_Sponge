@@ -1,13 +1,9 @@
-package com.mcrmb.sponge.auxiliary.mcrmb;
+package com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb;
 
-import com.google.common.reflect.TypeToken;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.mcrmb.sponge.auxiliary.McrmbCommandMain;
-import com.mcrmb.sponge.auxiliary.data.CommandItem;
-import com.mcrmb.sponge.auxiliary.util.FileUtil;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.McrmbCommandMain;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.data.CommandItem;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.util.FileUtil;
 import ninja.leaping.configurate.ConfigurationNode;
-import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 import ninja.leaping.configurate.yaml.YAMLConfigurationLoader;
 
 import java.io.File;
@@ -42,5 +38,6 @@ public class ConfigManager {
             CommandItem item = CommandItem.create(entry.getValue());
             items.put((String) entry.getKey(), item);
         }
+        McrmbPluginInfo.config.command = config.getNode("command").getString("bcmd");
     }
 }

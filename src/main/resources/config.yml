@@ -1,3 +1,5 @@
+command: bcmd
+
 message:
   success: '§2购买{name}成功! 你现在还有{money}个点券.'
   not-money: '§c点券不足! 你当前有{money}个点券,但是购买该物品还需要{need}个点券.'

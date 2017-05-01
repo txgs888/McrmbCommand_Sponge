@@ -1,6 +1,6 @@
-package com.mcrmb.sponge.auxiliary.util;
+package com.mcrmb.sponge.auxiliary.mcrmbcommand.util;
 
-import com.mcrmb.sponge.auxiliary.McrmbCommandMain;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.McrmbCommandMain;
 
 import java.io.*;
 

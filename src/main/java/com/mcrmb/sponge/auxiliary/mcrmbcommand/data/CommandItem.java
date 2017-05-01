@@ -1,4 +1,4 @@
-package com.mcrmb.sponge.auxiliary.data;
+package com.mcrmb.sponge.auxiliary.mcrmbcommand.data;
 
 import ninja.leaping.configurate.ConfigurationNode;
 
@@ -20,7 +20,6 @@ public class CommandItem {
             for (Field field : itemClass.getDeclaredFields()) {
                 field.setAccessible(true); //绕过java权限检测
                 field.set(item, node.getNode(field.getName()).getString()); //设置属性内容
-
             }
         } catch (Exception e) {
             e.printStackTrace();
