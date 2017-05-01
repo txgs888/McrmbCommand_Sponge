@@ -1,5 +1,6 @@
 package com.mcrmb.sponge.auxiliary;
 
+import com.mcrmb.sponge.auxiliary.mcrmb.ConfigManager;
 import com.mcrmb.sponge.auxiliary.mcrmb.JavaPlugin;
 import com.mcrmb.sponge.auxiliary.mcrmb.McrmbPluginInfo;
 import org.spongepowered.api.event.Listener;
@@ -13,6 +14,10 @@ import org.spongepowered.api.plugin.Plugin;
 public class McrmbCommandMain extends JavaPlugin {
     private static McrmbCommandMain instance;
 
+    public static void info(String log) {
+        instance().getLogger().info(log);
+    }
+
     public static McrmbCommandMain instance() {
         return instance;
     }
@@ -22,5 +27,6 @@ public class McrmbCommandMain extends JavaPlugin {
     public void onServerStart(GameStartedServerEvent event) {
         instance = this;
         super.onServerStart(event);
+        ConfigManager.init();
     }
 }

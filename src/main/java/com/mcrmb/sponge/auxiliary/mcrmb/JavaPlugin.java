@@ -38,10 +38,6 @@ public class JavaPlugin {
     @DefaultConfig(sharedRoot = true)
     private Path configPath;
 
-    @Inject
-    @DefaultConfig(sharedRoot = true)
-    private ConfigurationLoader<CommentedConfigurationNode> config;
-
     public PluginContainer getPlugin() {
         return plugin;
     }
@@ -58,7 +54,4 @@ public class JavaPlugin {
         return configPath;
     }
 
-    public ConfigurationLoader<CommentedConfigurationNode> getConfig() {
-        return config;
-    }
 }
