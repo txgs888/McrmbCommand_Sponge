@@ -18,6 +18,14 @@ public class ConfigManager {
     private static HashMap<String, CommandItem> items;
     private static ConfigurationNode messageNode;
 
+    public static CommandItem getItem(String id) {
+        return items.get(id);
+    }
+
+    public static boolean containsItem(String id) {
+        return items.containsKey(id);
+    }
+
     public static String getMessage(String key) {
         return messageNode.getNode(key).getString();
     }
