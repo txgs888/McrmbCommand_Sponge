@@ -36,7 +36,7 @@ public class CommandItem {
     public static void executeCommand(Player player, String cmd) {
         try {
             String type = cmd.contains(":") ? cmd.substring(0, cmd.indexOf(":")) : "console";
-            String text = cmd.contains(":") ? cmd.substring(cmd.indexOf(":", cmd.length())) : cmd;
+            String text = cmd.contains(":") ? cmd.substring(cmd.indexOf(":") + 1) : cmd;
             switch (type) {
                 case "player": {
                     Sponge.getCommandManager().process(player, text.replace("{player}", player.getName()));
@@ -80,7 +80,8 @@ public class CommandItem {
                         executeCommand(player, command);
                     }
                     player.sendMessage(TextUtil.of(ConfigManager.getMessage("success")
-                            .replace("{money}", String.valueOf(result.getMoney()))));
+                            .replace("{money}", String.valueOf(result.getMoney()))
+                            .replace("{name}", commandItem.getDisplay())));
                 }).submit(McrmbCommandMain.instance());
             } else if (result.getCode() == 102) { //余额不足
                 player.sendMessage(TextUtil.of(ConfigManager.getMessage("not-money")
