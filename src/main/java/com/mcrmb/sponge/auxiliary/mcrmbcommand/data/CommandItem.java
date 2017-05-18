@@ -8,10 +8,8 @@ import com.mcrmb.sponge.result.PayResult;
 import ninja.leaping.configurate.ConfigurationNode;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.living.player.Player;
-import org.spongepowered.api.event.entity.SpawnEntityEvent;
 import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
-import sun.security.krb5.Config;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -27,7 +25,7 @@ public class CommandItem {
             Class<CommandItem> itemClass = CommandItem.class;
             for (Field field : itemClass.getDeclaredFields()) {
                 field.setAccessible(true); //绕过java权限检测
-                field.set(item, node.getNode(field.getName()).getString()); //设置属性内容
+                field.set(item, node.getNode(field.getName()).getValue()); //设置属性内容
             }
         } catch (Exception e) {
             e.printStackTrace();
