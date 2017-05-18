@@ -1,7 +1,9 @@
 package com.mcrmb.sponge.auxiliary.mcrmbcommand;
 
 import com.mcrmb.sponge.auxiliary.mcrmbcommand.command.CommandProxy;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.command.module.BuyCommand;
 import com.mcrmb.sponge.auxiliary.mcrmbcommand.command.module.HelpCommand;
+import com.mcrmb.sponge.auxiliary.mcrmbcommand.command.module.ReloadCommand;
 import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.ConfigManager;
 import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.JavaPlugin;
 import com.mcrmb.sponge.auxiliary.mcrmbcommand.mcrmb.McrmbPluginInfo;
@@ -55,5 +57,7 @@ public class McrmbCommandMain extends JavaPlugin {
                 .build();
         Sponge.getCommandManager().register(this, basics, McrmbPluginInfo.config.command);
         getCommandProxy().register(new HelpCommand());
+        getCommandProxy().register(new BuyCommand());
+        getCommandProxy().register(new ReloadCommand());
     }
 }
