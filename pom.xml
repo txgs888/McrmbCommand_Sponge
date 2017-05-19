@@ -24,6 +24,10 @@
             <id>sponge</id>
             <url>https://repo.spongepowered.org/maven</url>
         </repository>
+        <repository>
+            <id>mcrmb</id>
+            <url>http://repo.mcrmb.com/nexus/content/repositories/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -32,6 +36,11 @@
             <artifactId>spongeapi</artifactId>
             <version>5.1.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mcrmb.sponge</groupId>
+            <artifactId>McrmbCore</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
